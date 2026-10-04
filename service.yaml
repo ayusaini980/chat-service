@@ -32,7 +32,9 @@ spec:
             secretName: chat-service-env
             items:
               - key: '1'
-                path: .env
+                path: primary.env
+              - key: '2'
+                path: secondary.env  
   traffic:
     - latestRevision: true
       percent: 100
