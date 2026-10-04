@@ -16,7 +16,7 @@ spec:
       containers:
         - image: asia-south1-docker.pkg.dev/project-e476913f-d5b8-472f-834/chat-service-repo/chat-service:latest
           command: ['uvicorn']
-          args: ['main:app', '--host', '0.0.0.0', '--port', '8000', '--env-file', '/secrets/.env']
+          args: ['app.main:app', '--host', '0.0.0.0', '--port', '8000', '--env-file', '/secrets/.env']
           ports:
             - containerPort: 8000
           resources:
