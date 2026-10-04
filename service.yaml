@@ -16,7 +16,7 @@ spec:
       containers:
         - image: asia-south1-docker.pkg.dev/project-e476913f-d5b8-472f-834/chat-service-repo/chat-service:latest
           command: ['uvicorn']
-          args: ['app.main:app', '--host', '0.0.0.0', '--port', '8000', '--env-file', '/secrets/.env']
+          args: ['main:app', '--host', '0.0.0.0', '--port', '8000', '--env-file', '/secrets/.env']
           ports:
             - containerPort: 8000
           resources:
@@ -31,10 +31,8 @@ spec:
           secret:
             secretName: chat-service-env
             items:
-              - key: '1'
-                path: primary.env
-              - key: '2'
-                path: secondary.env  
+              - key: latest
+                path: .env  
   traffic:
     - latestRevision: true
       percent: 100

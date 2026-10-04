@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException
-from .utils import get_book_details, add_book_func
+from utils import get_book_details, add_book_func
 app = FastAPI()
 from pydantic import BaseModel
-from .chat_service import chat
+from chat_service import chat
 
 
 
